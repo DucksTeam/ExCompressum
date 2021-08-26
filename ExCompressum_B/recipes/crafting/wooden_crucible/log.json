@@ -1,0 +1,26 @@
+{
+	"format_version": "1.16",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "excompressum:log_wooden_crucible"
+		},
+
+		"tags": ["crafting_table"],
+		"pattern": [
+			"P P",
+			"P P",
+			"PSP"
+		],
+		"key": {
+			"P": {
+				"item": "minecraft:log"
+			},
+			"S": {
+				"item": "minecraft:wooden_slab"
+			}
+		},
+		"result": {
+			"item": "excompressum:wooden_crucible"
+		}
+	}
+}

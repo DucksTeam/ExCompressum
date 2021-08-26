@@ -1,0 +1,17 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "excompressum:wooden_crucible_water_binding_texture",
+			"enable_attachables": true,
+			"materials": { "default": "entity" },
+			"textures": {
+				"default": "textures/blocks/water_placeholder"
+			},
+			"geometry": {
+				"default": "geometry.wooden_crucible_texture_binding"
+			},
+			"render_controllers": ["controller.render.wooden_crucible_binding_texture"]
+		}
+	}
+}

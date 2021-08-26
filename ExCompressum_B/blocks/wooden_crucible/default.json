@@ -1,0 +1,162 @@
+{
+	"format_version": "1.16.221",
+	"minecraft:block": {
+		"description": {
+			"identifier": "excompressum:wooden_crucible",
+			"register_to_creative_menu": true,
+			"properties": {
+				"excompressum:material_capacity": [0,1,2,3,4,5,6,7,8],
+				"excompressum:material_remaining": [0,1,2,3,4,5,6,7,8]
+			}
+		},
+
+		"components": {
+			"minecraft:block_light_absorption": 10,
+			"minecraft:destroy_time": 2.0,
+			"minecraft:geometry": "geometry.wooden_crucible_empty",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "log_side"
+				}
+			},
+			"minecraft:on_interact": {
+				"event": "ínteract"
+			},
+			"minecraft:on_player_destroyed": {
+				"event": "clear_texture"
+			}
+		},
+		"events": {
+			"ínteract": {
+				"sequence": [{
+					"condition": "q.block_property('excompressum:material_capacity') == 0",
+					"sequence": [{
+						"condition": "q.get_equipped_item_name(0) == 'leaves' || q.get_equipped_item_name(0) == 'leaves2'",
+						"decrement_stack": {},
+						"run_command": {
+							"command": [
+								"summon excompressum:wooden_crucible_leaves_binding_texture ~~-0.03125~",
+								"summon excompressum:wooden_crucible_water_binding_texture ~~-0.1875~"
+							]
+						},
+						"set_block_property": {
+							"excompressum:material_capacity": 2,
+							"excompressum:material_remaining": 2
+						}
+					}, {
+						"condition": "q.get_equipped_item_name(0) == 'sapling'",
+						"decrement_stack": {},
+						"run_command": {
+							"command": [
+								"summon excompressum:wooden_crucible_leaves_binding_texture ~~-0.109375~",
+								"summon excompressum:wooden_crucible_water_binding_texture ~~-0.1875~"
+							]
+						},
+						"set_block_property": {
+							"excompressum:material_capacity": 1,
+							"excompressum:material_remaining": 1
+						}
+					}]
+				}, {
+					"condition": "q.block_property('excompressum:material_capacity') > 0 && q.block_property('excompressum:material_capacity') < 8 && q.block_property('excompressum:material_capacity') != 7",
+					"sequence": [{
+						"condition": "q.get_equipped_item_name(0) == 'leaves' || q.get_equipped_item_name(0) == 'leaves2'",
+						"decrement_stack": {},
+						"run_command": {
+							"command": "event entity @e[type=excompressum:wooden_crucible_leaves_binding_texture,c=1,r=1] add_250_100"
+						},
+						"set_block_property": {
+							"excompressum:material_capacity": "q.block_property('excompressum:material_capacity') + 2",
+							"excompressum:material_remaining": "q.block_property('excompressum:material_remaining') + 2"
+						}
+					}, {
+						"condition": "q.get_equipped_item_name(0) == 'sapling'",
+						"decrement_stack": {},
+						"run_command": {
+							"command": "event entity @e[type=excompressum:wooden_crucible_leaves_binding_texture,c=1,r=1] add_125_100"
+						},
+						"set_block_property": {
+							"excompressum:material_capacity": "q.block_property('excompressum:material_capacity') + 1",
+							"excompressum:material_remaining": "q.block_property('excompressum:material_remaining') + 1"
+						}
+					}]
+				}, {
+					"condition": "q.block_property('excompressum:material_capacity') == 7",
+					"sequence": [{
+						"condition": "q.get_equipped_item_name(0) == 'leaves' || q.get_equipped_item_name(0) == 'leaves2' || q.get_equipped_item_name(0) == 'sapling'",
+						"decrement_stack": {},
+						"run_command": {
+							"command": "event entity @e[type=excompressum:wooden_crucible_leaves_binding_texture,c=1,r=1] add_125_100"
+						},
+						"set_block_property": {
+							"excompressum:material_capacity": "q.block_property('excompressum:material_capacity') + 1",
+							"excompressum:material_remaining": "q.block_property('excompressum:material_remaining') + 1"
+						}
+					}]
+				}]
+			},
+			"clear_texture": {
+				"sequence": [{
+					"condition": "q.block_property('excompressum:material_capacity') > 0",
+					"run_command": {
+						"command": [
+							"event entity @e[type=excompressum:wooden_crucible_leaves_binding_texture,c=1,r=1] despawn",
+							"event entity @e[type=excompressum:wooden_crucible_water_binding_texture,c=1,r=1] despawn"
+						]
+					}
+				}]
+			},
+			"material_remaining": {
+				"run_command": {
+					"command": [
+						"event entity @e[type=excompressum:wooden_crucible_leaves_binding_texture,c=1,r=1] fill_up",
+						"event entity @e[type=excompressum:wooden_crucible_water_binding_texture,c=1,r=1] fill_up"
+					]
+				},
+				"set_block_property": {
+					"excompressum:material_remaining": "q.block_property('excompressum:material_remaining') - 1"
+				}
+			},
+			"liquid_interact": {
+				"sequence": [{
+					"condition": "q.get_equipped_item_name(0) == 'bucket'",
+					"decrement_stack": {
+						"ignore_game_mode": true
+					},
+					"spawn_loot": {
+						"table": "loot_tables/gameplay/wooden_crucible/water_bucket.json"
+					},
+					"run_command": {
+						"command": [
+							"playsound bucket.fill_water @a ~~~ 1.0",
+							"event entity @e[type=excompressum:wooden_crucible_leaves_binding_texture,c=1,r=1] despawn",
+							"event entity @e[type=excompressum:wooden_crucible_water_binding_texture,c=1,r=1] despawn"
+						]
+					},
+					"set_block_property": {
+						"excompressum:material_capacity": 0,
+						"excompressum:material_remaining": 0
+					}
+				}]
+			}
+		},
+		"permutations": [{
+			"condition": "q.block_property('excompressum:material_remaining') > 0",
+			"components": {
+				"minecraft:ticking": {
+					"range": [3.75, 3.75],
+					"on_tick": {
+						"event": "material_remaining"
+					}
+				}
+			}
+		}, {
+			"condition": "q.block_property('excompressum:material_capacity') == 8 && q.block_property('excompressum:material_remaining') == 0",
+			"components": {
+				"minecraft:on_interact": {
+					"event": "liquid_interact"
+				}
+			}
+		}]
+	}
+}

@@ -3,10 +3,10 @@
 ## *Reduce the initial progression*
 
 ## Features
-1. [ ] Wooden Crucible
-	* [ ] Item Accept Transformable
+1. [x] Wooden Crucible
+	* [x] Item Accept Transformable
 		* Leaves, Sapling
-	* [ ] Can Full Filled Water + Empty Bucket -> Water Bucket -> Empty Crucible
+	* [x] Can Full Filled Water + Empty Bucket -> Water Bucket -> Empty Crucible
 2. [ ] Compressed Block
 	* Cobblestone, Gravel, Sand, Dust
 3. [ ] Heavy Sieve
