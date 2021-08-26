@@ -15,20 +15,7 @@
 		* Compressed Gravel
 		* Compressed Sand
 		* Compressed Dust
-4. [ ] Animal Bait
-	* [ ] Bait Condition
-		* Water Check
-		* Grass Check
-		* Bait Limit
-		* Non Player In 1 Chunk (16 blocks)
-	* [ ] Bait Type
-		* Cow
-		* Chicken
-		* Sheep
-		* Pig
-		* Squid
-		* Wolf
-		* Ocelot
+4. [ ] Compressed Hammer
 
 ## License
 ### <u>ModdingForBlockheads/ExCompressum</u> <b>[GPL-3.0 License](https://github.com/ModdingForBlockheads/ExCompressum/blob/master/LICENSE)</b>
