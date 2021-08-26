@@ -18,6 +18,8 @@
 4. [ ] Animal Bait
 	* [ ] Bait Condition
 		* Water Check
+		* Grass Check
+		* Bait Limit
 		* Non Player In 1 Chunk (16 blocks)
 	* [ ] Bait Type
 		* Cow
