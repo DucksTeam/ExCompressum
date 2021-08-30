@@ -5,7 +5,7 @@
 		"description": "Resources Pack by NguyenDuck\nBase Textures By ModdingForBlockheads\nEdited Textures By NguyenDuck\nAll right reserved",
 		"uuid": "555f47fa-118a-4a23-8563-2789892a35ee",
 		"min_engine_version": [1, 16, 221],
-		"version": [1, 0, 0]
+		"version": [1, 0, 1]
 	},
 	"modules": [{
 		"type": "resources",

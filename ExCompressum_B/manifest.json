@@ -5,7 +5,7 @@
 		"description": "Behavior Pack by NguyenDuck\n Inspired from ModdingForBlockheads\nAll right reserved",
 		"uuid": "d8836d4f-ba43-4c85-b899-f2cd1b071c87",
 		"min_engine_version": [1, 16, 221],
-		"version": [1, 0, 0]
+		"version": [1, 0, 1]
 	},
 	"modules": [{
 		"type": "data",
@@ -15,7 +15,7 @@
 	}],
 	"dependencies": [{
 		"uuid": "555f47fa-118a-4a23-8563-2789892a35ee",
-		"version": [1, 0, 0]
+		"version": [1, 0, 1]
 	}, {
 		"uuid": "51e7681b-23e0-4a5b-bccc-858ca45ae1a5",
 		"version": [1, 0, 9]

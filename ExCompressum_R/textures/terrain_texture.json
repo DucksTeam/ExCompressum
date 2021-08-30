@@ -1,0 +1,22 @@
+{
+	"resource_pack_name": "excompressum",
+	"texture_name": "atlas.terrain",
+	"padding": 0,
+	"texture_data": {
+		"compressed_cobblestone": {
+			"textures": "textures/blocks/compressed_block/cobblestone"
+		},
+		"compressed_gravel": {
+			"textures": "textures/blocks/compressed_block/gravel"
+		},
+		"compressed_dirt": {
+			"textures": "textures/blocks/compressed_block/dirt"
+		},
+		"compressed_sand": {
+			"textures": "textures/blocks/compressed_block/sand"
+		},
+		"compressed_dust_block": {
+			"textures": "textures/blocks/compressed_block/dust_block"
+		}
+	}
+}

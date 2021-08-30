@@ -1,0 +1,22 @@
+{
+	"format_version": "1.16.221",
+	"minecraft:block": {
+		"description": {
+			"identifier": "excompressum:compressed_dust_block",
+			"register_to_creative_menu": true
+		},
+
+		"components": {
+			"tag:excompressum:compressed": {},
+			"minecraft:block_light_absorption": 15,
+			"minecraft:destroy_time": 4.0,
+			"minecraft:explosion_resistance": 6.0,
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "compressed_dust_block"
+				}
+			},
+			"minecraft:unit_cube": {}
+		}
+	}
+}

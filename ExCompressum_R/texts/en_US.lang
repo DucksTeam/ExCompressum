@@ -1,2 +1,8 @@
 
 tile.excompressum:wooden_crucible.name=Wooden Crucible
+
+tile.excompressum:compressed_cobblestone.name=Compressed Cobblestone
+tile.excompressum:compressed_gravel.name=Compressed Gravel
+tile.excompressum:compressed_dirt.name=Compressed Dirt
+tile.excompressum:compressed_sand.name=Compressed Sand
+tile.excompressum:compressed_dust_block.name=Compressed Dust Block

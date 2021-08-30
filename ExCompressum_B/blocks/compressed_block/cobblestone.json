@@ -1,0 +1,41 @@
+{
+	"format_version": "1.16.221",
+	"minecraft:block": {
+		"description": {
+			"identifier": "excompressum:compressed_cobblestone",
+			"register_to_creative_menu": true
+		},
+
+		"components": {
+			"tag:excompressum:compressed": {},
+			"minecraft:block_light_absorption": 15,
+			"minecraft:destroy_time": 4.0,
+			"minecraft:explosion_resistance": 6.0,
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "compressed_cobblestone"
+				}
+			},
+			"minecraft:unit_cube": {},
+			"minecraft:on_player_destroyed": {
+				"event": "on_destroyed"
+			},
+			"minecraft:loot": "loot_tables/empty.json"
+		},
+		"events": {
+			"on_destroyed": {
+				"sequence": [{
+					"condition": "q.get_equipped_item_name(0) == 'wooden_hammer' || q.get_equipped_item_name(0) == 'stone_hammer' || q.get_equipped_item_name(0) == 'iron_hammer' || q.get_equipped_item_name(0) == 'golden_hammer' || q.get_equipped_item_name(0) == 'diamond_hammer'",
+					"spawn_loot": {
+						"table": "loot_tables/gameplay/compressed_block/cobblestone.json"
+					}
+				}, {
+					"condition": "q.get_equipped_item_name(0) == 'wooden_pickaxe' || q.get_equipped_item_name(0) == 'stone_pickaxe' || q.get_equipped_item_name(0) == 'iron_pickaxe' || q.get_equipped_item_name(0) == 'diamond_pickaxe' || q.get_equipped_item_name(0) == 'netherite_pickaxe'",
+					"spawn_loot": {
+						"table": "loot_tables/gameplay/compressed_block/raw_cobblestone.json"
+					}
+				}]
+			}
+		}
+	}
+}

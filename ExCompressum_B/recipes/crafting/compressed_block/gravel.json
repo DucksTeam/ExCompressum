@@ -1,0 +1,23 @@
+{
+	"format_version": "1.16",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "excompressum:compressed_gravel"
+		},
+
+		"tags": ["crafting_table"],
+		"pattern": [
+			"GGG",
+			"GGG",
+			"GGG"
+		],
+		"key": {
+			"G": {
+				"item": "minecraft:gravel"
+			}
+		},
+		"result": {
+			"item": "excompressum:compressed_gravel"
+		}
+	}
+}
